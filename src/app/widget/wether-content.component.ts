@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WidgetContent, Reloadable } from './widget-content';
 
 @Component({
   selector: 'app-wether-content',
@@ -11,4 +12,10 @@ import { Component } from '@angular/core';
   `,
   styleUrls: ['./widget-content.scss'],
 })
-export class WetherContentComponent {}
+export class WetherContentComponent implements WidgetContent, Reloadable {
+  id = 'random-string';
+  isLoading = false;
+  reload() {
+    console.log('...reloading is happening...');
+  }
+}
