@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { WidgetBase } from './widget-base';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-widget',
@@ -31,10 +32,4 @@ import { Component, Input } from '@angular/core';
     `,
   ],
 })
-export class WidgetComponent {
-  @Input()
-  title: string = '';
-  onExportJson() {
-    console.log('Export Json logic..');
-  }
-}
+export class WidgetComponent extends WidgetBase {}
