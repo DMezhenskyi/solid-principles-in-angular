@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-widget',
@@ -10,21 +10,7 @@ import { Component, Input } from '@angular/core';
       </button>
     </div>
     <mat-divider></mat-divider>
-    <ng-container *ngIf="widget === 'wether'">
-      <h5>Currently</h5>
-      <section class="wether-widget">
-        <mat-icon class="widget-icon">wb_sunny</mat-icon>
-        <div class="value">+25</div>
-      </section>
-    </ng-container>
-    <ng-container *ngIf="widget === 'velocity'">
-      <h5>Last sprint</h5>
-      <section class="wether-widget">
-        <mat-icon class="widget-icon">assessment</mat-icon>
-        <div class="value">Planned: <strong>25</strong></div>
-        <div class="value">Achieved: <strong>20</strong></div>
-      </section>
-    </ng-container>
+    <ng-content></ng-content>
   `,
   styles: [
     `
@@ -37,33 +23,15 @@ import { Component, Input } from '@angular/core';
         width: 400px;
         margin-left: 20px;
       }
-      .wether-widget {
-        display: block;
-        text-align: center;
-        position: relative;
-        min-width: 190px;
-      }
       .header {
         display: flex;
         align-items: center;
         justify-content: space-between;
       }
-      .widget-icon {
-        font-size: 64px;
-        width: 64px;
-        height: 64px;
-        color: orange;
-      }
-      .value {
-        font-size: 24px;
-        opacity: 0.7;
-      }
     `,
   ],
 })
 export class WidgetComponent {
-  @Input()
-  widget: 'wether' | 'velocity' = 'wether';
   onExportJson() {
     console.log('Export Json logic..');
   }

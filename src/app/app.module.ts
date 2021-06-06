@@ -8,9 +8,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { WidgetComponent } from './widget/widget.component';
+import { WetherContentComponent } from './widget/wether-content.component';
+import { VelocityContentComponent } from './widget/velocity-content.component';
 
 @NgModule({
-  declarations: [AppComponent, WidgetComponent],
+  declarations: [AppComponent, WidgetComponent, WetherContentComponent, VelocityContentComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
