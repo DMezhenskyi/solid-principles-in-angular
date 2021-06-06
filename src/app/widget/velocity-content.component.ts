@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WidgetContent } from './widget-content';
 
 @Component({
   selector: 'app-velocity-content',
@@ -12,4 +13,6 @@ import { Component } from '@angular/core';
   `,
   styleUrls: ['./widget-content.scss'],
 })
-export class VelocityContentComponent {}
+export class VelocityContentComponent implements WidgetContent {
+  id: string = '';
+}
