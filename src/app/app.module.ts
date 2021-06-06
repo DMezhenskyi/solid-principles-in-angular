@@ -8,9 +8,10 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
+import { WidgetComponent } from './widget.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, WidgetComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
