@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { WidgetContent, Reloadable } from './widget-content';
+import { RELOADABLE_CONTENT } from './widget-content.token';
 
 @Component({
   selector: 'app-wether-content',
@@ -11,6 +12,9 @@ import { WidgetContent, Reloadable } from './widget-content';
     </section>
   `,
   styleUrls: ['./widget-content.scss'],
+  providers: [
+    { provide: RELOADABLE_CONTENT, useExisting: WetherContentComponent },
+  ],
 })
 export class WetherContentComponent implements WidgetContent, Reloadable {
   id = 'random-string';

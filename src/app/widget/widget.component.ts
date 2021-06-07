@@ -1,5 +1,8 @@
+import { WetherContentComponent } from './wether-content.component';
 import { WidgetBase } from './widget-base';
-import { Component } from '@angular/core';
+import { Component, ContentChild } from '@angular/core';
+import { RELOADABLE_CONTENT } from './widget-content.token';
+import { Reloadable } from './widget-content';
 
 @Component({
   selector: 'app-widget',
@@ -32,4 +35,13 @@ import { Component } from '@angular/core';
     `,
   ],
 })
-export class WidgetComponent extends WidgetBase {}
+export class WidgetComponent extends WidgetBase {
+  @ContentChild(RELOADABLE_CONTENT)
+  content?: Reloadable;
+
+  ngAfterContentInit(): void {
+    if (this.content) {
+      this.content.reload();
+    }
+  }
+}
